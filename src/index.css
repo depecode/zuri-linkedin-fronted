@@ -1,13 +1,473 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* { 
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
 }
+
+body {
+  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  border-top: 8px solid #222;
+  color: #fff;
+  background: #000;
+}
+
+.hero-banner-img{
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.966);
+  height: 100%;
+}
+
+.nav-bar {
+  position: absolute;
+  top: 0px;
+  display: flex;
+}
+
+.nav-bar button {
+  margin-top: 15px;
+  margin-left: 1100px;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  height: 40px;
+  width: 80px;
+  border-radius: 5px;
+  border: none;
+}
+
+.hero {
+  position: absolute;
+  top: 150px;
+  left: 300px;
+  text-align: center;
+ right: 300px;
+}
+
+.hero h1{
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.hero h5{
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.hero p{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.hero input[type=email] {
+  color: #5f5b5b;
+  width: 80%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.hero button {
+ color: #fff;
+ background: #e50914;
+ height: 50px;
+ width: 20%;
+border-radius: 5px;
+border: none;
+font-size: 16px;
+}
+
+.nf-enjoy{
+  padding-top: 60px;
+  height: 500px;
+  padding-left: 60px;
+  /* padding-right: 60px; */
+
+}
+
+.nf-enjoy .left{
+  float: left;
+}
+
+.nf-enjoy .right{
+  float: right;
+}
+
+.nf-enjoy img {
+  height: 100%;
+  width: 80%;
+}
+
+.nf-enjoy h1{
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.nf-enjoy p{
+  font-size: 28px;
+  font-weight: 400;
+  width: 600px;
+}
+
+.nf-download {
+  padding-top: 60px;
+  height: 700px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.nf-download .left{
+  float: left;
+}
+
+.nf-download .right{
+  float: right;
+}
+
+.nf-download img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.nf-download h1{
+  font-size: 48px;
+  font-weight: 600;
+  width: 550px;
+  margin-top: -300px;
+}
+
+.nf-download p{
+  font-size: 28px;
+  font-weight: 400;
+  width: 600px;
+}
+
+.nf-watch {
+  padding-top: 40px;
+  height: 400px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.nf-watch h1{
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.nf-watch p{
+  font-size: 28px;
+  font-weight: 400;
+  width: 500px;
+}
+
+.nf-create {
+  padding-top: 60px;
+  height: 700px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.nf-create .left{
+  float: left;
+}
+
+.nf-create .right{
+  float: right;
+}
+
+.nf-create img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.nf-create h1{
+  font-size: 48px;
+  font-weight: 600;
+  width: 550px;
+  margin-top: -300px;
+}
+
+.nf-create p{
+  font-size: 28px;
+  font-weight: 400;
+  width: 600px;
+}
+
+.nf-question {
+  padding-top: 60px;
+  height: 1000px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.nf-question h1 {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.nf-question ul {
+  list-style: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.nf-question li {
+  background-color: #222;
+  margin-bottom: 10px;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.nf-question-ready {
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.nf-question-ready p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.nf-question-ready input[type=email] {
+  color: #5f5b5b;
+  width: 60%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.nf-question-ready button {
+ color: #fff;
+ background: #e50914;
+ height: 50px;
+ width: 20%;
+border-radius: 2px;
+border: none;
+font-size: 16px;
+}
+
+.nf-footer {
+  height: 400px;
+  color:#757575 !important;
+  font-size: 14px;
+  list-style: none;
+  padding-top: 60px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.nf-footer h5 {
+  padding-left: 40px;
+  font-size: 16px;
+}
+
+.nf-footer p {
+  padding-left: 40px;
+}
+.nf-footer-row {
+  display: flex;
+}
+
+.nf-footer-col {
+  width: 25%;
+}
+
+.nf-footer-col li{
+  list-style: none;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+
+.nf-footer-col a{
+  text-decoration: none;
+  color:#757575 !important;
+
+}
+
+
+
+
+/* Sigin Page */
+
+.nf-signin {
+  position: absolute;
+  top: 20px;
+  max-height: 100vh;
+}
+
+.nf-signin img{
+  max-height: 100vh;
+}
+
+.nf-signin-form {
+  background-color: rgba(0,0,0,.75);
+  background-size: 500px 300px;
+  height: 600px;
+  width: 500px;
+  margin-right: 200px;
+  margin-left: 400px;
+  padding: 60px 60px 0px 60px;
+}
+
+.nf-signin-form h1 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.nf-signin-form input[type=text], input[type=password], .nf-signin-form button {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 50px;
+  border-radius: 5px;
+  background: #222;
+  font-size: 16px;
+  padding: 20px;
+  border-block-style: none;
+  font-weight: 400;
+  color: #fff;
+}
+
+.nf-signin-form button {
+  background-color: #e50914;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nf-check {
+  display: flex;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: -10px;
+
+}
+
+.nf-check-help {
+  margin-left: 150px;
+}
+
+.nf-social-auth, .nf-new {
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+}
+
+.nf-new {
+  display: flex;
+  margin-top: -10px;
+
+}
+
+.nf-signin-footer{
+  font-size: 12px;
+    width: 300px;
+    color: #333;
+    margin-top: -10px;
+}
+
+
+.nf-signin .nf-footer{
+  background-color: rgba(0,0,0,.75);
+  /* background-size: cover; */
+}
+
+
+
+/* >>>>>>> sign up <<<<<<<<<<<<<<<< */
+
+#nf-signup {
+background-color: #f3f3f3;
+color: #333;
+}
+
+#nf-signup .nav{
+display: flex;
+}
+
+#nf-signup .logo{
+ 
+  }
+
+#nf-signup .signin{
+ float: left;
+ margin-left: 1100px;
+  }
+
+  .nf-signup-form {
+    margin: 60px 400px 60px 400px;
+  }
+
+  .nf-signup-form .nf-step{
+    font-size: 14px;
+    font-weight: 400
+  }
+
+  .nf-signup-form .nf-step span{
+    font-weight: bold;
+  }
+
+  .nf-signup-form .nf-welcome{
+    font-size: 32px;
+  }
+
+  
+  .nf-signup-form .nf-enter{
+    font-size: 18px;
+    width: 400px;
+  }
+
+  .nf-signup-form .nf-email p {
+    font-weight: bold;
+  }
+
+  .nf-signup-form .nf-email input[type=password] {
+    background-color: #f3f3f3;
+    border: 1px solid #333;
+  }
+
+
+  .nf-signup-form button{
+    width: 100%;
+    height: 50px;
+    border: 1px red solid;
+    background-color: red;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
