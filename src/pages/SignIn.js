@@ -1,6 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function SignIn() {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+
+
+ const history = useHistory();
+
+  useEffect(() => {
+    if(localStorage.getItem('user-info')){
+      history.push("/add")
+    }
+  }, [])
+
+  async function login()
+  {
+    console.log("working")
+    console.log(username, password)
+    let item=(username, password);
+    let result = await fetch("https://the-netflix-clone.herokuapp.com/accounts/rest-auth/login/",{
+      method: 'POST',
+      // mode: 'no-cors',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(item)
+    });
+    result = await result.json();
+    console.log(result);
+    localStorage.setItem("user-info",JSON.stringify(result))
+    history.push("/add")
+  }
+ 
   return (
     <section>
         <img src="https://assets.nflxext.com/ffe/siteui/vlv3/b8e09d9c-d1e7-4800-afd9-810e41ace684/369018c9-6a93-4162-8d3b-f3488ad8c686/NG-en-20210607-popsignuptwoweeks-perspective_alpha_website_small.jpg" />
@@ -8,10 +42,10 @@ export default function SignIn() {
 
         <div className="nf-signin-form">
           <h1>Sign In</h1>
-          <input type="text" placeholder="Email or phone number" />
-          <input type="password" placeholder="Password" />
 
-          <button>Sign In</button>
+          <input type="text" placeholder="Email or phone number"  value={username} onChange={(e)=>setUsername(e.target.value)}/>
+          <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
+          <button type="submit" onClick={login}>Sign In</button>
           <div className="nf-check">
             <p><input type="checkbox" /> Remember me</p>
             <p className="nf-check-help">Need help?</p>

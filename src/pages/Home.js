@@ -1,27 +1,34 @@
 import React from "react";
 
+import { Link } from 'react-router-dom'
+
+
 export default function Home() {
   return (
     <section>
     <div className="card">
-      <img className="hero-banner-img"  src="https://assets.nflxext.com/ffe/siteui/vlv3/c0a32732-b033-43b3-be2a-8fee037a6146/0f28b5b4-261c-4d61-b6ba-1c75f0b7e79e/NG-en-20210607-popsignuptwoweeks-perspective_alpha_website_small.jpg"/>
+    <img className="hero-banner-img"  src="https://assets.nflxext.com/ffe/siteui/vlv3/c0a32732-b033-43b3-be2a-8fee037a6146/0f28b5b4-261c-4d61-b6ba-1c75f0b7e79e/NG-en-20210607-popsignuptwoweeks-perspective_alpha_website_small.jpg"/>
 
-        <div className="nav-bar">
-            <h2 className="logo">NETFLIX</h2>
-            <button className="btn-signin">Sign In</button>
-        </div>     <div className="nav-bar">
-            <h2 className="logo">NETFLIX</h2>
-            <button className="btn-signin">Sign In</button>
+        <div className="nf-home-overlay">
+
+<div className="nav-bar">
+    <h2 className="logo">NETFLIX</h2>
+    <button className="btn-signin">Sign In</button>
+</div>     <div className="nav-bar">
+    <h2 className="logo">NETFLIX</h2>
+    <button className="btn-signin"><Link to="/sign-in">Sign In</Link></button>
+</div>
+<div className="hero">
+    <h1>Unlimited movies, TV shows, and more.</h1>
+    <h5>Watch anywhere. Cancel anytime.</h5>
+    <p>
+    Ready to watch? Enter your email to create or restart your membership.
+    </p>
+    <input type="email" placeholder="Email Address" />
+    <button>Get Started</button>
+</div>
         </div>
-        <div className="hero">
-            <h1>Unlimited movies, TV shows, and more.</h1>
-            <h5>Watch anywhere. Cancel anytime.</h5>
-            <p>
-            Ready to watch? Enter your email to create or restart your membership.
-            </p>
-            <input type="email" placeholder="Email Address" />
-            <button>Get Started</button>
-        </div>
+      
     </div>
      
 

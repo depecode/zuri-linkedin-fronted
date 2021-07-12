@@ -1,6 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Axios from "axios"
 
 export default function SignUp() {
+
+   const url = "https://the-netflix-clone.herokuapp.com/accounts/api/register/"
+    const [data, setData] = useState({  
+      username: "",
+      password: ""
+  })
+    function submit(e){
+      e.preventDefault();
+      Axios.post(url, {
+          username : data.username,
+          email: data.username,
+          password: data.password,
+          password2: data.password2
+      })
+      .then(res => {
+        console.log(res.data)
+      })
+    }
+
+    function handle(e){
+      const newData = {...data}
+      newData[e.target.id] = e.target.value
+      setData(newData)
+      console.log(newData)
+    }
+
     return (
         <section  id="nf-signup">
         <div className="nav">
@@ -13,21 +40,22 @@ export default function SignUp() {
 <h1 className="nf-welcome">Welcome back!</h1>
 <h1>Joining Netflix is easy.</h1>  
 </div>
+<form onSubmit={(e)=> submit(e)}>
 
 
             <p className="nf-enter">Enter your password and you'll be watching in no time.</p> 
 
             <div className="nf-email">
               <label>Email</label>
-              <p>hello@email.com</p>
+              <p onChange={(e) => handle(e)} id="username" value={data.username}>hello@email.com</p>
               </div>
 
-              <input type="password"  placeholder="Enter your password" style={{backgroundColr: "#f3f3f3",
-    border: "1px solid #333"}}/>   
+              <input onChange={(e) => handle(e)} id="password" value={data.password} type="password"  placeholder="Enter your password" />   
             <p>Forgot your password?</p>
             <button>Next</button>
+            </form>
+
 </div> 
-  
   
   <div className="nf-footer" style={{backgroundColor: "#f3f3f3", maxHeight: "300px", color: "#757575"}}>
       <h5>Questions? Contact us.</h5>
