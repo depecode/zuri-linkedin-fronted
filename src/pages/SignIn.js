@@ -11,7 +11,7 @@ export default function SignIn() {
 
   useEffect(() => {
     if(localStorage.getItem('user-info')){
-      history.push("/add")
+      history.push("/dashboard")
     }
   }, [])
 
@@ -22,7 +22,6 @@ export default function SignIn() {
     let item=(username, password);
     let result = await fetch("https://the-netflix-clone.herokuapp.com/accounts/rest-auth/login/",{
       method: 'POST',
-      // mode: 'no-cors',
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
@@ -31,8 +30,8 @@ export default function SignIn() {
     });
     result = await result.json();
     console.log(result);
-    localStorage.setItem("user-info",JSON.stringify(result))
-    history.push("/add")
+    localStorage.setItem('user-info',JSON.stringify(result))
+    history.push("/dashboard")
   }
  
   return (

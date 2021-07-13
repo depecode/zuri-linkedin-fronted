@@ -1,24 +1,57 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Axios from "axios"
+import { useHistory } from "react-router-dom";
+
 
 export default function SignUp() {
 
+  const history = useHistory();
+
+  useEffect(() => {
+    if(localStorage.getItem('user-info')){
+      history.push("/dashboard")
+    }
+  }, [])
+
    const url = "https://the-netflix-clone.herokuapp.com/accounts/api/register/"
     const [data, setData] = useState({  
-      username: "",
+      username: history.location.state.key,
       password: ""
   })
+  var bodyFormData = new FormData();
+  bodyFormData.append('username', history.location.state.key);
+  bodyFormData.append('email', history.location.state.key);
+  bodyFormData.append('password', data.password);
+  bodyFormData.append('password2', data.password);
+
     function submit(e){
       e.preventDefault();
-      Axios.post(url, {
-          username : data.username,
-          email: data.username,
-          password: data.password,
-          password2: data.password2
+      // Axios.post(url, {
+      //     username : history.location.state.key,
+      //     email: history.location.state.key,
+      //     password: data.password,
+      //     password2: data.password
+      // })
+      // .then(res => {
+      //   console.log(res.data)
+      // })
+
+      Axios({
+        method: "post",
+        url: url,
+        data: bodyFormData,
+        headers: { "Content-Type": "multipart/form-data" },
       })
-      .then(res => {
-        console.log(res.data)
-      })
+        .then(function (response) {
+          //handle success
+          console.log(response);
+          localStorage.setItem('user-info',JSON.stringify(response))
+          history.push("/dashboard")
+        })
+        .catch(function (response) {
+          //handle error
+          console.log(response);
+        });
     }
 
     function handle(e){
@@ -26,6 +59,7 @@ export default function SignUp() {
       newData[e.target.id] = e.target.value
       setData(newData)
       console.log(newData)
+      console.log(history.location.state.key)
     }
 
     return (
@@ -47,7 +81,7 @@ export default function SignUp() {
 
             <div className="nf-email">
               <label>Email</label>
-              <p onChange={(e) => handle(e)} id="username" value={data.username}>hello@email.com</p>
+              <p onChange={(e) => handle(e)} id="username" value={data.username}>{history.location.state.key}</p>
               </div>
 
               <input onChange={(e) => handle(e)} id="password" value={data.password} type="password"  placeholder="Enter your password" />   

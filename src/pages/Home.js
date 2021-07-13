@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { Link } from 'react-router-dom'
 
-
+ 
 export default function Home() {
+    const [username, setUsername] = useState('')
+
+    const history = useHistory();
+
+    function auth()
+    {
+      history.push({pathname:"/sign-up",
+      state:{
+          key:username
+       }})
+       console.log("username", username);
+    }
+  
   return (
     <section>
     <div className="card">
@@ -24,8 +38,8 @@ export default function Home() {
     <p>
     Ready to watch? Enter your email to create or restart your membership.
     </p>
-    <input type="email" placeholder="Email Address" />
-    <button>Get Started</button>
+    <input type="email" placeholder="Email Address" value={username} onChange={(e)=>setUsername(e.target.value)} />
+    <button onClick={auth}>Get Started</button>
 </div>
         </div>
       
@@ -94,8 +108,8 @@ export default function Home() {
         </div>
         <div className="nf-question-ready">
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
-            <input type="email"/>
-            <button>Get Started</button>
+            <input type="email" value={username} onChange={(e)=>setUsername(e.target.value)}/>
+            <button onClick={auth}>Get Started</button>
         </div>
     </div>
 </div>
