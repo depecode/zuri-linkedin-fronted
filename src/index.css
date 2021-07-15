@@ -50,6 +50,13 @@ img{
   border: none;
 }
 
+.nav-bar button a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+}
+
+
 .hero {
   position: absolute;
   top: 150px;
@@ -306,6 +313,223 @@ font-size: 16px;
 
 }
 
+@media screen and (max-width: 900px){
+  .hero-banner-img{
+    height: 500px;
+  }
+
+  .nav-bar h2 {
+    margin-left: 30px;
+  }
+
+  .nav-bar button {
+    margin-left: 170px;
+  }
+
+  .nav-bar button a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .hero {
+    top: 100px;
+    left: 10px;
+   right: 10px;
+  }
+
+  .hero h1{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: -30px;
+  }
+  
+  .hero h5{
+    font-size: 18px;
+    margin-bottom: -15px;
+  }
+  
+  .hero p{
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  .hero input[type=email] {
+    width: 100%;
+  }
+  
+  .hero button {
+   height: 40px;
+   width: 40%;
+  }
+
+  .nf-enjoy{
+    padding-top: 30px;
+    padding-left: 30px;
+    text-align: center;  
+  }
+  
+  .nf-enjoy h1{
+    font-size: 28px;
+    width: 350px;
+  }
+  
+  .nf-enjoy p{
+    font-size: 16px;
+    width: 350px;
+  }
+  
+  .nf-download {
+    padding-top: 80px;
+    padding-left: 30px;
+    height: 600px;
+    text-align: center; 
+  }
+  
+  .nf-download .left{
+    float: right;
+  }
+  
+  .nf-download .right{
+    float: left;
+  }
+  
+  .nf-download img {
+    margin-top: 150px;
+  }
+  
+
+  .nf-download h1{
+    font-size: 28px;
+    width: 350px;
+    margin-top: -420px;
+  }
+  
+  .nf-download p{
+    font-size: 18px;
+    font-weight: 400;
+    width: 350px;
+  }
+  
+  .nf-watch {
+    height: 250px;
+    padding-top: 30px;
+    padding-left: 30px;
+    text-align: center;
+  }
+  
+  .nf-watch h1{
+    font-size: 28px;
+  }
+  
+  .nf-watch p{
+    font-size: 18px;
+    width: 380px;
+  }
+  
+  .nf-create {
+    padding-top: 80px;
+    padding-left: 20px;
+    height: 600px;
+    text-align: center; 
+  }
+
+  .nf-create img {
+    margin-top: 150px;
+  }
+  
+  .nf-create .left{
+    float: right;
+  }
+  
+  .nf-create .right{
+    float: left;
+  }
+
+  .nf-create h1{
+    font-size: 28px;
+    width: 350px;
+    margin-top: -450px;
+  }
+  
+  .nf-create p{
+    font-size: 18px;
+    width: 350px;
+  }
+  
+  .nf-question {
+    padding-top: 60px;
+    height: 750px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  .nf-question h1 {
+    font-size: 28px;
+  }
+  
+  .nf-question ul {
+    font-size: 14px;
+    margin-left: -30px;
+  }
+  
+  .nf-question li {
+    margin-bottom: 5px;
+    padding: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+  .nf-question-ready {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .nf-question-ready p {
+    font-size: 18px;
+  }
+  
+  .nf-question-ready input[type=email] {
+    width: 100%;
+  }
+  
+  .nf-question-ready button {
+   height: 40px;
+   width: 40%;
+   font-weight: 500;
+  }
+  
+  .nf-footer {
+    height: 600px;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .nf-footer h5 {
+    padding-left: 40px;
+    font-size: 16px;
+  }
+  
+  .nf-footer p {
+    padding-left: 40px;
+  }
+  .nf-footer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .nf-footer-col {
+    width: 50%;
+  }
+  
+  .nf-footer-col li{
+    margin-bottom: 10px;
+  }
+}
+
 
 
 
@@ -395,6 +619,11 @@ font-size: 16px;
 }
 
 
+@media screen and (min-width: 360px) {
+
+}
+
+
 
 /* >>>>>>> sign up <<<<<<<<<<<<<<<< */
 
@@ -461,6 +690,51 @@ border: 1px solid #f3f3f3;
     font-size: 24px;
   }
 
+/* Dashboard */
+
+  .nf-dashboard {
+    background: #141414;
+    max-width: 100%;
+    max-height: 100%;
+    top: -20px;
+  }
+
+  .nf-dashboard .logo{
+    color: #e62929;
+  }
+
+  .nf-dashboard h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    color: #fff;
+  }
+
+  .nf-dashboard ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 5% 25% 25% 25%;
+  }
+
+  .nf-dashboard ul li {
+    margin-right: 20px;
+  }
+
+  .nf-dashboard ul li img {
+    width: 100px;
+    height: 50%;
+  }
+
+  .nf-dashboard ul li p {
+    font-size: 14px;
+    color: grey;
+    font-weight: 400;
+    text-align: center;
+  }
+
+
+
 
 
 
@@ -505,6 +779,8 @@ border: 1px solid #f3f3f3;
 .nf-loader:after {
   left: 1.5em;
 }
+
+
 
 
 
